@@ -41,6 +41,6 @@ Para executar este projeto, foram utilizadas as seguintes ferramentas e bibliote
    ```bash
    pip install pandas plotly jupyter
    ```
-3. Garanta que o ficheiro da base de dados (`cancelamentos.csv`) está na mesma diretoria do código.
-4. Inicie o Jupyter e abra o ficheiro **"Análise de dados.ipynb"**.
+3. Garanta que o ficheiro da base de dados (`cancelamentos.csv`) está na mesma pasta do código.
+4. Inicie o Jupyter e abra o arquivo **"Análise de dados.ipynb"**.
 5. Execute as células (cells) sequencialmente para reproduzir a limpeza de dados e visualizar os gráficos interativos gerados.
