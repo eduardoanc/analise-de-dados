@@ -1,49 +1,46 @@
-# 📊 Título do Projeto de Análise
+# Projeto de Análise de Cancelamento de Clientes (Churn)
 
-## 📝 Descrição
-Uma breve descrição do que este código de análise faz. 
-* Qual é o objetivo principal da análise? 
-* Que tipo de dados estão sendo processados? 
-* Quais são as principais perguntas que o código tenta responder ou os problemas que ele resolve?
+Este projeto tem como objetivo realizar uma análise exploratória de dados para compreender o comportamento dos clientes e identificar os principais motivos que levam ao cancelamento de subscrições (Churn). Todo o código e o desenvolvimento passo a passo encontram-se no ficheiro principal do projeto: **"Análise de dados.ipynb"**.
 
-## ⚙️ Tecnologias e Dependências
-Liste aqui as linguagens, ferramentas e bibliotecas utilizadas no projeto. Por exemplo:
-- Python 3.x
-- Pandas
-- NumPy
-- Matplotlib / Seaborn
-- Jupyter Notebook
+## 📊 Sobre os Dados
 
-## 📁 Estrutura do Projeto
-Descreva brevemente a organização dos arquivos:
-- `analise.py` (ou `.ipynb`): Script principal com a lógica da análise.
-- `dados/`: Pasta onde os conjuntos de dados (datasets) brutos e processados ficam armazenados.
-- `outputs/`: Pasta com os resultados exportados, como gráficos, planilhas ou relatórios finais.
+A análise utiliza como fonte de dados o ficheiro `cancelamentos.csv`. A base de dados contém as seguintes informações dos clientes:
+* `idade`
+* `sexo`
+* `tempo_como_cliente`
+* `frequencia_uso`
+* `ligacoes_callcenter`
+* `dias_atraso`
+* `assinatura`
+* `duracao_contrato`
+* `total_gasto`
+* `meses_ultima_interacao`
+* `cancelou` (Variável alvo)
 
-## 🚀 Como Executar o Código
+## ⚙️ Funcionalidades e Etapas da Análise
 
-Siga os passos abaixo para rodar a análise na sua máquina local:
+O desenvolvimento no ficheiro "Análise de dados.ipynb" foi dividido nas seguintes etapas lógicas:
 
-1. Clone este repositório (ou faça o download dos arquivos):
+1. **Importação de Dados:** Leitura do ficheiro CSV utilizando a biblioteca Pandas.
+2. **Visualização Inicial e Limpeza:** Remoção de colunas que não agregam valor à análise (como o `CustomerID`) para evitar ruído nos dados.
+3. **Tratamento de Dados:** Verificação da integridade dos dados e remoção de linhas que continham valores nulos ou vazios (`dropna`).
+4. **Análise Inicial de Churn:** Verificou-se, de forma preliminar, que o cenário conta com uma taxa de cancelamento de **56.79%**, contra **43.21%** de clientes ativos.
+5. **Análise Gráfica:** Utilização da biblioteca Plotly para gerar histogramas interativos, cruzando as várias características dos clientes (como a `idade`) com o estado de cancelamento, de forma a extrair insights e padrões.
+
+## 🛠️ Tecnologias Utilizadas
+
+Para executar este projeto, foram utilizadas as seguintes ferramentas e bibliotecas em Python:
+* **Pandas:** Para manipulação, tratamento e análise das estruturas de dados.
+* **Plotly:** Para a criação de gráficos interativos e visualização de dados avançada.
+* **Jupyter Notebook:** O ambiente interativo utilizado no desenvolvimento ("Análise de dados.ipynb").
+
+## 🚀 Como Executar o Projeto
+
+1. Certifique-se de ter o Python instalado no seu computador.
+2. Instale as dependências necessárias através do terminal:
    ```bash
-   git clone https://github.com/seu-usuario/nome-do-repositorio.git
+   pip install pandas plotly jupyter
    ```
-
-2. Instale as bibliotecas necessárias. Recomenda-se o uso de um ambiente virtual:
-   ```bash
-   pip install -r requirements.txt
-   ```
-   *(Nota: Se houver pacotes específicos, liste os comandos de instalação aqui).*
-
-3. Execute o script principal:
-   ```bash
-   python analise.py
-   ```
-
-## 📈 Principais Resultados e Insights
-*Adicione aqui um resumo das descobertas mais importantes geradas por esta análise.*
-- Insight 1: A métrica X apresentou um aumento de Y% no período Z.
-- Insight 2: Existe uma correlação forte entre a variável A e a variável B.
-
-## 👤 Autor
-* **Seu Nome** - [Seu GitHub](https://github.com/seu-usuario) - [Seu LinkedIn](https://linkedin.com/in/seu-perfil)
+3. Garanta que o ficheiro da base de dados (`cancelamentos.csv`) está na mesma diretoria do código.
+4. Inicie o Jupyter e abra o ficheiro **"Análise de dados.ipynb"**.
+5. Execute as células (cells) sequencialmente para reproduzir a limpeza de dados e visualizar os gráficos interativos gerados.
